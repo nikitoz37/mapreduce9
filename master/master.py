@@ -23,8 +23,8 @@ import aiohttp
 URL_TXT = 'urls.txt'
 SLAVES_COUNT = 2
 SLAVES_ADDRESS = (
-    'http://0.0.0.0:5001/slave/run',
-    'http://0.0.0.0:5002/slave/run',
+    'http://127.0.0.1:5001/slave/run',
+    'http://127.0.0.1:5002/slave/run',
 )
 CACHE_SIZE = 1000
 
