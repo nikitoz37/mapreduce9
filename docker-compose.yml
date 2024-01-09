@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
  
 services:
   db:
@@ -68,3 +68,8 @@ volumes:
 networks:
   mapreduce-network:
     driver: bridge
+  #  internal: False
+  #  ipam:
+  #   driver: default
+  #   config:
+  #     - subnet: 127.16.238.0/24
