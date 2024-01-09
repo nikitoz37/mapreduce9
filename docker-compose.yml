@@ -14,6 +14,8 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql
     #  - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - mapreduce-network
 
   master:
     container_name: master
@@ -29,6 +31,8 @@ services:
       - db
       - slave1
       - slave2
+    networks:
+      - mapreduce-network
 
   slave1:
     container_name: slave1
@@ -40,6 +44,8 @@ services:
       FLASK_DEBUG: "true"
     ports:
       - "5001:5000"
+    networks:
+      - mapreduce-network
 
   slave2:
     container_name: slave2
@@ -51,8 +57,14 @@ services:
       FLASK_DEBUG: "true"
     ports:
       - "5002:5000"
+    networks:
+      - mapreduce-network
 
 
 volumes:
-  pgdata: {}
+  pgdata: #{}
 
+
+networks:
+  mapreduce-network:
+    driver: bridge
