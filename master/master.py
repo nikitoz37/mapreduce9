@@ -176,7 +176,9 @@ def index():
     #top_words = get_top_from_db()
     #return json.dumps(sorted_cache, indent = 4, ensure_ascii=False)
     top_words = Word.query.order_by(Word.num).limit(30).all()               
-    return make_response(jsonify([top_words.json() for word in top_words]), 200)
+    print(top_words)
+    #return make_response(jsonify([top_words.json() for word in top_words]), 200)
+    return json.dumps(top_words, indent = 4, ensure_ascii=False)
     
 
 
