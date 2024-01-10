@@ -1,4 +1,5 @@
 
+import time
 import json
 import os
 
@@ -49,6 +50,7 @@ class Word(db.Model):
         return {'id': self.id,'word': self.word, 'email': self.num}
 
 
+time.sleep(10)
 with app.app_context():
     db.create_all()
 
