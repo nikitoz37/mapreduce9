@@ -27,6 +27,10 @@ services:
       DB_URL: postgresql://postgres:postgres@db:5432/top_words_db
     ports:
       - "5000:5000"
+    links:
+      - db:db
+      - slave1:slave1
+      - slave2:slave2
     depends_on:
       - db
       - slave1
