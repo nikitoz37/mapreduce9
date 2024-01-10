@@ -33,6 +33,8 @@ services:
       - slave2
     networks:
       - mapreduce-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   slave1:
     container_name: slave1
