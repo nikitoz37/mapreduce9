@@ -24,8 +24,8 @@ import aiohttp
 URL_TXT = 'urls.txt'
 SLAVES_COUNT = 2
 SLAVES_ADDRESS = (
-    'http://127.0.0.1:5001/slave/run',
-    'http://127.0.0.1:5002/slave/run',
+    'http://http://172.18.0.1:5001/slave/run',
+    'http://http://172.18.0.1:5002/slave/run',
 )
 CACHE_SIZE = 1000
 
@@ -137,7 +137,7 @@ def add():
 
 @app.route('/test', methods=['GET'])
 def test():
-    resp = requests.get('http://0.0.0.0:5001/')
+    resp = requests.get('http://172.18.0.1:5001/')
     return resp.text
 
 
