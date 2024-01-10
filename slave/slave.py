@@ -34,7 +34,7 @@ def get_data(url: str):
     if (resp.status_code == 200):
         soup1 = BeautifulSoup(resp.text, 'html.parser')
         soup2 = soup1.find('body')
-        match_list = re.findall(r'[А-Я][а-я]+', soup2.text.lower(), re.I)
+        match_list = re.findall(r'[А-Яа-я]{3,30}', soup2.text.lower(), re.I)
 
         for item in match_list:
             if (item in words):

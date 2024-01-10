@@ -39,7 +39,7 @@ class Word(db.Model):
     __tablename__ = 'top_words'
 
     id = db.Column(db.Integer, primary_key=True)
-    word = db.Column(db.String(30), unique=True, nullable=False)
+    word = db.Column(db.String(50), unique=True, nullable=False)
     num = db.Column(db.Integer, nullable=False)
 
     def __init__(self, word, num):
@@ -155,7 +155,7 @@ def index():
             #print(words)
 
             for page in words:
-                for key_page, value_page in page[0].items():
+                for key_page, value_page in page.items():
                     if (key_page in cache):
                         cache[key_page] += value_page
                     else:
